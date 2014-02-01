@@ -1,0 +1,17 @@
+package co.edu.udea.iw.dao;
+
+import java.util.List;
+
+import co.edu.udea.iw.dto.Ciudad;
+import co.edu.udea.iw.exception.IWDaoException;
+
+public interface CiudadDAO {
+	
+	/**
+	 * Entrega todas las ciudades que existen en la base de datos
+	 * @return lista de ciudades consultadas
+	 * @throws IWDaoException
+	 */
+	public List<Ciudad> obtener() throws IWDaoException;
+
+}

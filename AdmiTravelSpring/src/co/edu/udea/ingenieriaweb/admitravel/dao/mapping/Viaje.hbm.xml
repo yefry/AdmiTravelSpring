@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 
+    @author Yeferson Marín
+-->
+<hibernate-mapping>
+    <class name="co.edu.udea.ingenieriaweb.admitravel.dto.Viaje" table="viaje">    
+        <composite-id name="id" class="co.edu.udea.ingenieriaweb.admitravel.dto.ViajeId">
+            <key-property name="idViaje" type="string">
+                <column name="IdViaje" length="10" />
+            </key-property>
+            <key-property name="idPaquete" type="string">
+                <column name="IdPaquete" length="45" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="paqueteDeViaje" class="co.edu.udea.ingenieriaweb.admitravel.dto.PaqueteDeViaje" update="false" insert="false" fetch="select">
+            <column name="IdPaquete" length="45" not-null="true" />
+        </many-to-one>
+        <property name="precio" type="int">
+            <column name="Precio" not-null="true"/>
+        </property>
+        <property name="fecha" type="date">
+            <column name="Fecha" length="10" not-null="true"/>
+        </property>    
+        <property name="estado" type="string">
+            <column name="Estado" length="16" not-null="true"/>
+        </property>
+        <set name="clienteViajes" table="clienteviaje" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdViaje" length="10" not-null="true" />
+                <column name="IdPaquete" length="45" not-null="true" />
+            </key>
+            <one-to-many class="co.edu.udea.ingenieriaweb.admitravel.dto.ClienteViaje" />
+        </set>
+    </class>
+</hibernate-mapping>

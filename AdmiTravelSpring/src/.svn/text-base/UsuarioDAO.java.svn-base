@@ -1,0 +1,30 @@
+package co.edu.udea.iw.dao;
+
+import java.util.List;
+
+import co.edu.udea.iw.dto.Rol;
+import co.edu.udea.iw.dto.Usuario;
+import co.edu.udea.iw.exception.IWDaoException;
+
+/**
+ * Métodos que se pueden realizar contra los usuarios del sistema
+ * @author Elver Suarez Alzate
+ *
+ */
+public interface UsuarioDAO {
+	
+	/**
+	 * Metodo que retorna todos los usuario que existen en la base de datos
+	 * @return lista de usuarios encontrados
+	 * @throws IWDaoException
+	 */
+	public List<Usuario> obtener() throws IWDaoException;
+	
+	public Usuario obtener(String login) throws IWDaoException;
+	
+	
+	public List<Usuario> obtenerPorRol(String rol) throws IWDaoException;
+	
+	public List<Usuario> obtenerPorRol(Rol rol) throws IWDaoException;
+
+}

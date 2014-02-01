@@ -1,0 +1,44 @@
+package co.edu.udea.iw.dto;
+
+import java.io.Serializable;
+
+public class Direccion implements Serializable {
+	
+	IdDireccion id;
+	String direccion;
+	String telefono;
+	Ciudad ciudad;
+	Boolean preferida;
+	
+	
+	public IdDireccion getId() {
+		return id;
+	}
+	public void setId(IdDireccion id) {
+		this.id = id;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	public String getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+	public Ciudad getCiudad() {
+		return ciudad;
+	}
+	public void setCiudad(Ciudad ciudad) {
+		this.ciudad = ciudad;
+	}
+	public Boolean getPreferida() {
+		return preferida;
+	}
+	public void setPreferida(Boolean preferida) {
+		this.preferida = preferida;
+	}
+}

@@ -1,0 +1,35 @@
+package co.edu.udea.iw.bl;
+
+import java.util.List;
+
+import co.edu.udea.iw.dto.Cliente;
+import co.edu.udea.iw.exception.IWBLException;
+import co.edu.udea.iw.exception.IWDaoException;
+
+public interface ClienteBL {
+	
+	/**
+	 * Metodo que permite almacenar un cliente en el sistema
+	 * @param cedula identificación del cliente
+	 * @param nombres nombre del cliente
+	 * @param apellidos apellidos del cliente
+	 * @param email correo electrónico del cliente
+	 * @param usuario login del usuario que crea el cliente
+	 * @throws IWDaoException ocurre cuando hay un error en la base de datos
+	 * @throws IWBLException ocurre cuando hay un error de lógica del negocio en los datos a guardar
+	 */
+	public void guardar(String cedula, String nombres, String apellidos, 
+			String email, String usuario) throws IWDaoException, IWBLException;
+	
+	public void actualizar(Cliente cliente, String cedula, String nombres, String apellidos, 
+			String email, String usuario) throws IWDaoException, IWBLException;
+	
+	public void eliminar(Cliente cliente) throws IWDaoException, IWBLException;
+	
+	public void notificarCliente(Cliente cliente, String asunto, String mensaje) throws IWDaoException, IWBLException;
+
+	List<Cliente> obtenerClientes() throws IWDaoException, IWBLException;
+
+	Cliente obtener(String cedula) throws IWDaoException, IWBLException;
+
+}

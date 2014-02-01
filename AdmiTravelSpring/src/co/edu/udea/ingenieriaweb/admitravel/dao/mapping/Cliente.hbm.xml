@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 
+    @author Yeferson Marín
+-->
+<hibernate-mapping>
+    <class name="co.edu.udea.ingenieriaweb.admitravel.dto.Cliente" table="cliente">  
+      
+        <id name="identificacion" type="string">
+            <column name="Identificacion" length="20"/>
+        </id>
+        <property name="tipoIdentificacion" type="string">
+            <column name="Tipo_Identificacion" length="10" not-null="true"/>
+        </property>
+        <property name="nombres" type="string">
+            <column name="Nombre" length="50" not-null="true"/>
+        </property>        
+        <property name="telefono" type="string">
+            <column name="Telefono" length="17" />
+        </property>
+        <property name="celular1" type="string">
+            <column name="Celular1" length="17" />
+        </property>
+        <property name="celular2" type="string">
+            <column name="Celular2" length="17" />
+        </property>        
+        <property name="email" type="string">
+            <column name="E_mail" length="30" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="Direccion" length="50" />
+        </property>
+        <property name="pazysalvo" type="string">
+            <column name="PazySalvo" length="2" not-null="true" />
+        </property>
+        <property name="genero" type="string">
+            <column name="Genero" length="10" not-null="true" />
+        </property>
+        <set name="clienteViajes" table="clienteviaje" inverse="true" lazy="true" fetch="select">
+        	<key>
+        		<column name="Identificacion" length="20" not-null="true" />
+        	</key>
+        	<one-to-many class="co.edu.udea.ingenieriaweb.admitravel.dto.ClienteViaje"/>
+        </set>
+    </class>
+</hibernate-mapping>

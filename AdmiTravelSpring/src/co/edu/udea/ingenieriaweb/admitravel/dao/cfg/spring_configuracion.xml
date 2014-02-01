@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/clase"></property>
+		<property name="username" value="invitado"></property>
+		<property name="password" value="root"></property>
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>		
+		<property name="mappingResources">
+			<list>
+				<value>co/edu/udea/ingenieriaweb/admitravel/dao/mapping/Cliente.hbm.xml</value>
+				<value>co/edu/udea/ingenieriaweb/admitravel/dao/mapping/ClienteViaje.hbm.xml</value>
+				<value>co/edu/udea/ingenieriaweb/admitravel/dao/mapping/Destino.hbm.xml</value>
+				<value>co/edu/udea/ingenieriaweb/admitravel/dao/mapping/PaqueteDeViaje.hbm.xml</value>
+				<value>co/edu/udea/ingenieriaweb/admitravel/dao/mapping/Tour.hbm.xml</value>
+				<value>co/edu/udea/ingenieriaweb/admitravel/dao/mapping/Viaje.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="clienteDao" class="co.edu.udea.ingenieriaweb.admitravel.dao.impl.ClienteDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="destinoDao" class="co.edu.udea.ingenieriaweb.admitravel.dao.impl.DestinoDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="paqueteDeViajeDao" class="co.edu.udea.ingenieriaweb.admitravel.dao.impl.PaqueteDeViajeDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="tourDao" class="co.edu.udea.ingenieriaweb.admitravel.dao.impl.TourDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="viajeDao" class="co.edu.udea.ingenieriaweb.admitravel.dao.impl.ViajeDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	
+	
+	<bean id="clienteBL" class="co.edu.udea.iw.bl.impl.ClienteBLImpl">
+		<property name="clienteDAO" ref="clienteDao"></property>
+		<property name="usuarioDAO" ref="usuarioDao"></property>
+	</bean>
+
+</beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 
+    @author Yeferson Marín
+-->
+<hibernate-mapping>
+    <class name="co.edu.udea.ingenieriaweb.admitravel.dto.ClienteViaje" table="clienteviaje">
+        <composite-id name="id" class="co.edu.udea.ingenieriaweb.admitravel.dto.ClienteViajeId">
+            <key-property name="identificacion" type="string">
+                <column name="Identificacion" length="20" />
+            </key-property>
+            <key-property name="idViaje" type="string">
+                <column name="IdViaje" length="10" />
+            </key-property>
+            <key-property name="idPaquete" type="string">
+                <column name="IdPaquete" length="45" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="viaje" class="co.edu.udea.ingenieriaweb.admitravel.dto.Viaje" update="false" insert="false" fetch="select">
+            <column name="IdViaje" length="10" not-null="true" />
+            <column name="IdPaquete" length="45" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cliente" class="co.edu.udea.ingenieriaweb.admitravel.dto.Cliente" update="false" insert="false" fetch="select">
+            <column name="Identificacion" length="20" not-null="true" />
+        </many-to-one>
+        <property name="estadoPago" type="string">
+            <column name="EstadoPago" length="7" not-null="true"/>
+        </property>        
+    </class>
+</hibernate-mapping>
