@@ -3,6 +3,7 @@ package co.edu.udea.ingenieriaweb.admitravel.dao;
 import java.util.List;
 
 import co.edu.udea.ingenieriaweb.admitravel.dto.Viaje;
+import co.edu.udea.ingenieriaweb.admitravel.dto.ViajeId;
 import co.edu.udea.ingenieriaweb.admitravel.util.exception.IWDaoException;
 
 /**
@@ -26,7 +27,7 @@ public interface ViajeDao {
 	 * @return instancia del viaje con los datos, si no existe retorna nulo.
 	 * @throws IWDaoException
 	 */
-	public Viaje obtener(String IdViaje) throws IWDaoException;
+	public Viaje obtener(ViajeId IdViaje) throws IWDaoException;
 	
 	/**
 	 * Guarda los datos de un viaje, teniendo en cuenta los datos que pueden ser nulos

@@ -59,8 +59,9 @@ public class ClienteBLImp implements ClienteBL {
 			String celular1, String celular2, String direccion,
 			String pazysalvo, String genero) throws IWDaoException,
 			IWBLException {
+		
 		if(identificacion != null && !"".equals(identificacion))
-		cliente.setIdentificacion(tipoIdentificacion);
+			cliente.setIdentificacion(identificacion);
 	
 		if(nombres != null 	&& !"".equals(nombres))
 			cliente.setNombres(nombres);

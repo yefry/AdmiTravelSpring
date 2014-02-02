@@ -17,7 +17,7 @@ public class Viaje implements java.io.Serializable {
 	private ViajeId id;
 
 	/**
-	 * Datos del paquete de viaje
+	 * Datos del paquete de viaje asociado
 	 */
 	private PaqueteDeViaje paqueteDeViaje;
 	

@@ -11,6 +11,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import co.edu.udea.ingenieriaweb.admitravel.dao.ViajeDao;
 import co.edu.udea.ingenieriaweb.admitravel.dto.Viaje;
+import co.edu.udea.ingenieriaweb.admitravel.dto.ViajeId;
 import co.edu.udea.ingenieriaweb.admitravel.util.exception.IWDaoException;
 
 /**
@@ -37,7 +38,7 @@ public class ViajeDaoImp extends HibernateDaoSupport implements ViajeDao {
 	}
 
 	@Override
-	public Viaje obtener(String id) throws IWDaoException {
+	public Viaje obtener(ViajeId id) throws IWDaoException {
 		Session sesion = null;
 		Viaje viaje = null;
 		try{
