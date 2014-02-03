@@ -2,7 +2,7 @@ package co.edu.udea.ingenieriaweb.admitravel.bl;
 
 import java.util.List;
 
-import co.edu.udea.ingenieriaweb.admitravel.dto.Destino;
+import co.edu.udea.ingenieriaweb.admitravel.dto.Tour;
 import co.edu.udea.ingenieriaweb.admitravel.util.exception.IWBLException;
 import co.edu.udea.ingenieriaweb.admitravel.util.exception.IWDaoException;
 
@@ -16,17 +16,17 @@ public interface TourBL {
 	
 	/**
 	 * Método que permite almacenar un destino en el sistema
-	 * @param idDestino tipo de identificación del destino
-	 * @param nombre nombre del destino
-	 * @param detalle del destino	 
+	 * @param idTour tipo de identificación del Tour
+	 * @param nombre nombre del tour
+	 * @param detalle del tour	 
 	 * @throws IWDaoException ocurre cuando hay un error en la base de datos
 	 * @throws IWBLException ocurre cuando hay un error de lógica del negocio en los datos a guardar
 	 */
-	public void guardar(String idDestino, String nombre, String detalle) throws IWDaoException, IWBLException;
+	public void guardar(String idTour, String nombre, String detalle) throws IWDaoException, IWBLException;
 	
-	public void actualizar(Destino destino, String idDestino, String nombre, String detalle) 
+	public void actualizar(Tour tour, String idTour, String nombre, String detalle) 
 			throws IWDaoException, IWBLException;
 
-	Destino obtener(String idDestino) throws IWDaoException, IWBLException;
+	Tour obtener(String idTour) throws IWDaoException, IWBLException;
 
 }

@@ -68,9 +68,12 @@
 		<property name="PaqueteDeViajeDao" ref="paqueteDeViajeDao"></property>		
 	</bean>
 	
-<!-- 	<bean id="clienteBL" class="co.edu.udea.iw.bl.impl.ClienteBLImp"> -->
-<!-- 		<property name="clienteDAO" ref="clienteDao"></property> -->
-<!-- 		<property name="usuarioDAO" ref="usuarioDao"></property> -->
-<!-- 	</bean> -->
+	<bean id="tourBL" class="co.edu.udea.ingenieriaweb.admitravel.bl.impl.TourBLImp">
+		<property name="TourDao" ref="tourDao"></property>		
+	</bean>
+	
+	<bean id="viajeBL" class="co.edu.udea.iw.bl.impl.ViajeBLImp">
+		<property name="ViajeDao" ref="viajeDao"></property>		
+	</bean>
 
 </beans>
