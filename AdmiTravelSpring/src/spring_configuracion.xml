@@ -56,11 +56,11 @@
 	</bean>
 		
 	
-	<bean id="clienteBL" class="co.edu.udea.iw.bl.impl.ClienteBLImpl">
-		<property name="clienteDao" ref="clienteDao"></property>		
+	<bean id="clienteBL" class="co.edu.udea.ingenieriaweb.admitravel.bl.impl.ClienteBLImp">
+		<property name="ClienteDao" ref="clienteDao"></property>		
 	</bean>
 	
-<!-- 	<bean id="clienteBL" class="co.edu.udea.iw.bl.impl.ClienteBLImpl"> -->
+<!-- 	<bean id="clienteBL" class="co.edu.udea.iw.bl.impl.ClienteBLImp"> -->
 <!-- 		<property name="clienteDAO" ref="clienteDao"></property> -->
 <!-- 		<property name="usuarioDAO" ref="usuarioDao"></property> -->
 <!-- 	</bean> -->

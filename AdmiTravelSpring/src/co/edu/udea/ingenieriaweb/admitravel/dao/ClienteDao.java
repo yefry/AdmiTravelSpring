@@ -18,7 +18,7 @@ public interface ClienteDao {
 	 * @return lista de clientes
 	 * @throws IWDaoException
 	 */
-	public List<Cliente> obtener() throws IWDaoException;
+	public List<Cliente> obtenerClientes() throws IWDaoException;
 	
 	/**
 	 * Entrega los datos de un cliente dado su cedula, si el cliente no exite retorna null

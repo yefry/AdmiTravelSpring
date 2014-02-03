@@ -21,15 +21,13 @@ import co.edu.udea.ingenieriaweb.admitravel.util.exception.IWDaoException;
 public class ClienteDaoImp extends HibernateDaoSupport implements ClienteDao {
 
 	@Override
-	public List<Cliente> obtener() throws IWDaoException {
+	public List<Cliente> obtenerClientes() throws IWDaoException {
 		Session sesion = null;
 		List<Cliente> lista = null;		
 		try{
 			sesion = getSession();			
-			lista = sesion.createCriteria(Cliente.class)
-					      .add(Restrictions.ne("eliminado", new Boolean(true)))
-					      .addOrder(Order.asc("nombres"))
-						  .list();			
+			lista = sesion.createCriteria(Cliente.class).list();
+//			lista = sesion.createCriteria(Cliente.class).addOrder(Order.asc("nombres")).list();
 			return lista;			
 		}catch (HibernateException e) {
 			throw new IWDaoException(e);

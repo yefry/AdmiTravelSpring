@@ -37,7 +37,7 @@
         <property name="genero" type="string">
             <column name="Genero" length="10" not-null="true" />
         </property>
-        <set name="clienteViajes" table="clienteviaje" inverse="true" lazy="true" fetch="select">
+        <set name="clienteViajes" table="clienteviaje" inverse="true" lazy="false" fetch="select">
         	<key>
         		<column name="Identificacion" length="20" not-null="true" />
         	</key>

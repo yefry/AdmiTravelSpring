@@ -8,8 +8,10 @@ package co.edu.udea.ingenieriaweb.admitravel.bl.impl;
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.ingenieriaweb.admitravel.bl.ClienteBL;
@@ -21,10 +23,14 @@ import co.edu.udea.ingenieriaweb.admitravel.util.exception.IWDaoException;
  *
  */
 
+@RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-@ContextConfiguration(locations = "classpath:co.edu.udea.ingenieriaweb.admitravel.dao.cfg.spring_configuracion.xml")
+@ContextConfiguration(locations = "classpath:/spring_configuracion.xml")
 public class ClienteBLImpTest {
 
+	/*
+	 * Con @Autowired se le hace la inyección a los beans
+	 * */
 	@Autowired
 	ClienteBL clienteBL;
 	
@@ -88,18 +94,18 @@ public class ClienteBLImpTest {
 	/**
 	 * Test method for {@link co.edu.udea.ingenieriaweb.admitravel.bl.impl.ClienteBLImp#obtener(java.lang.String)}.
 	 */
-	@Test
-	public void testObtener() {
-		try {
-			Cliente cliente = clienteBL.obtener("1023345789");
-			System.out.println("Cedula: " + cliente.getIdentificacion());
-			System.out.println("Nombre completo: " + cliente.getNombres() + " ");
-			System.out.println("Genero: " + cliente.getGenero() + " ");
-		} catch (IWDaoException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+//	@Test
+//	public void testObtener() {
+//		try {
+//			Cliente cliente = clienteBL.obtener("1023345789");
+//			System.out.println("Cedula: " + cliente.getIdentificacion());
+//			System.out.println("Nombre completo: " + cliente.getNombres() + " ");
+//			System.out.println("Genero: " + cliente.getGenero() + " ");
+//		} catch (IWDaoException e) {
+//			e.printStackTrace();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 }

@@ -66,15 +66,6 @@ public class Cliente {
 	 * Lista de viajes a los que ha ido un cliente
 	 */
 	Set<ClienteViaje> clienteViajes;
-	
-
-	public Set<ClienteViaje> getClienteViajes() {
-		return clienteViajes;
-	}
-
-	public void setClienteViajes(Set<ClienteViaje> clienteViajes) {
-		this.clienteViajes = clienteViajes;
-	}
 
 	public String getIdentificacion() {
 		return identificacion;
@@ -154,6 +145,14 @@ public class Cliente {
 
 	public void setGenero(String genero) {
 		this.genero = genero;
+	}
+
+	public Set<ClienteViaje> getClienteViajes() {
+		return clienteViajes;
+	}
+
+	public void setClienteViajes(Set<ClienteViaje> clienteViajes) {
+		this.clienteViajes = clienteViajes;
 	}
 
 }

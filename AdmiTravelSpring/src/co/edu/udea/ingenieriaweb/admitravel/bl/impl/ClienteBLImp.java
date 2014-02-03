@@ -85,20 +85,20 @@ public class ClienteBLImp implements ClienteBL {
 	
 	@Override
 	public List<Cliente> obtenerClientes() throws IWDaoException, IWBLException{
-		return clienteDao.obtener();
+		return clienteDao.obtenerClientes();
 	}
 	
 	@Override
-	public Cliente obtener(String cedula) throws IWDaoException, IWBLException{
-		return clienteDao.obtener(cedula);
+	public Cliente obtener(String identificacion) throws IWDaoException, IWBLException{
+		return clienteDao.obtener(identificacion);
 	}
 
-	public ClienteDao getClienteDAO() {
+	public ClienteDao getClienteDao() {
 		return clienteDao;
 	}
 
-	public void setClienteDAO(ClienteDao clienteDAO) {
-		this.clienteDao = clienteDAO;
+	public void setClienteDao(ClienteDao clienteDao) {
+		this.clienteDao = clienteDao;
 	}
 	
 }
