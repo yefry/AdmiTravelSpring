@@ -5,7 +5,7 @@
 
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/clase"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/admitravel"></property>
 		<property name="username" value="invitado"></property>
 		<property name="password" value="root"></property>
 	</bean>
@@ -58,6 +58,14 @@
 	
 	<bean id="clienteBL" class="co.edu.udea.ingenieriaweb.admitravel.bl.impl.ClienteBLImp">
 		<property name="ClienteDao" ref="clienteDao"></property>		
+	</bean>
+	
+	<bean id="destinoBL" class="co.edu.udea.ingenieriaweb.admitravel.bl.impl.DestinoBLImp">
+		<property name="DestinoDao" ref="destinoDao"></property>		
+	</bean>
+	
+	<bean id="paqueteDeViajeBL" class="co.edu.udea.ingenieriaweb.admitravel.bl.impl.PaqueteDeViajeBLImp">
+		<property name="PaqueteDeViajeDao" ref="paqueteDeViajeDao"></property>		
 	</bean>
 	
 <!-- 	<bean id="clienteBL" class="co.edu.udea.iw.bl.impl.ClienteBLImp"> -->

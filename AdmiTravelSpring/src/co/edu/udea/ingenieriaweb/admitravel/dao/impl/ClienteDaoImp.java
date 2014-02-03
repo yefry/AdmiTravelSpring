@@ -49,7 +49,7 @@ public class ClienteDaoImp extends HibernateDaoSupport implements ClienteDao {
 
 	@Override
 	public void guardar(Cliente cliente) throws IWDaoException {
-		Session session = null;
+//		Session session = null;
 		Transaction tx = null;
 		try{
 			tx = getSession().beginTransaction();
@@ -62,7 +62,7 @@ public class ClienteDaoImp extends HibernateDaoSupport implements ClienteDao {
 	
 	@Override
 	public void actualizar(Cliente cliente) throws IWDaoException {
-		Session session = null;
+//		Session session = null;
 		try{
 			getHibernateTemplate().update(cliente);
 		}catch (HibernateException e) {
