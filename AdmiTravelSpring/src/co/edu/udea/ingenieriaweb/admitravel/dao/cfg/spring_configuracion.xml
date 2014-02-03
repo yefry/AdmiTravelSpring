@@ -54,12 +54,15 @@
 	<bean id="viajeDao" class="co.edu.udea.ingenieriaweb.admitravel.dao.impl.ViajeDaoImp">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	
-	
+		
 	
 	<bean id="clienteBL" class="co.edu.udea.iw.bl.impl.ClienteBLImpl">
-		<property name="clienteDAO" ref="clienteDao"></property>
-		<property name="usuarioDAO" ref="usuarioDao"></property>
+		<property name="clienteDao" ref="clienteDao"></property>		
 	</bean>
+	
+<!-- 	<bean id="clienteBL" class="co.edu.udea.iw.bl.impl.ClienteBLImpl"> -->
+<!-- 		<property name="clienteDAO" ref="clienteDao"></property> -->
+<!-- 		<property name="usuarioDAO" ref="usuarioDao"></property> -->
+<!-- 	</bean> -->
 
 </beans>
